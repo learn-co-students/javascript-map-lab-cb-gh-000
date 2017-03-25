@@ -8,6 +8,7 @@ describe('Uncovering alliances', function() {
   });
 
   it('should have 4 decepticons in the `sortedRobots` array', function() {
+    console.log(sortedRobots);
     expect(sortedRobots.filter(r => r.alliance === 'decepticon').length).toEqual(4);
   });
 
