@@ -10,6 +10,15 @@ const robots = [
   { name: 'Ironhide', alliance: null },
   { name: 'Ratchet', alliance: null }
 ];
+// 8 keys
+
+
+const sortedRobots = robots.map((robot)=> {
+  const robotsAlliance = knownDecepticons.includes(robot.name);
+  return Object.assign({}, robot, {
+    alliance: robotsAlliance ? 'decepticon' : 'autobot'
+  });
+});
 
 const zebraStripes = [
   { width: 9.12, color: null },
@@ -21,3 +30,10 @@ const zebraStripes = [
   { width: 0.59, color: null },
   { width: 7.31, color: null }
 ];
+// 8 keys
+
+const coloredZebraStripes = zebraStripes.map((stripe, index)=> {
+  return Object.assign({}, stripe, {
+    color: index % 2 === 0 ? 'black' : 'white'
+  })
+})
