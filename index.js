@@ -30,3 +30,4 @@ let sortedRobots = robots.map(robot => {
 });
 
 // console.log(sortedRobots)
+let coloredZebraStripes;
