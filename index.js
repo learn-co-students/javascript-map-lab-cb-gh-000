@@ -29,5 +29,9 @@ let sortedRobots = robots.map(robot => {
   });
 });
 
-// console.log(sortedRobots)
-let coloredZebraStripes;
+console.log(zebraStripes)
+let coloredZebraStripes = zebraStripes.map((zebra, i) => {
+  return Object.assign({}, zebra, {
+    color: i % 2 === 0 ? 'black': 'white',
+  });
+});
