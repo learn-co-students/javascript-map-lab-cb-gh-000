@@ -23,21 +23,15 @@ const zebraStripes = [
 ];
 
 const sortedRobots = robots.map(robot => {
-  let robotCopy = Object.assign({}, robot);
-  if (knownDecepticons.indexOf(robotCopy.name) > -1) {
-    robotCopy.alliance = 'decepticon';
-  } else {
-    robotCopy.alliance = 'autobot';
-  }
+  const robotCopy = Object.assign({}, robot);
+  const isDecepticon = knownDecepticons.indexOf(robotCopy.name) > -1;
+  robotCopy.alliance = isDecepticon ? 'decepticon' : 'autobot';
   return robotCopy;
 });
 
 const coloredZebraStripes = zebraStripes.map((zebra, index) => {
-  let zebraCopy = Object.assign({}, zebra);
-  if(index % 2 === 0) {
-    zebraCopy.color = 'black';
-  } else {
-    zebraCopy.color = 'white';
-  }
+  const zebraCopy = Object.assign({}, zebra);
+  const isEven = index % 2 === 0
+  zebraCopy.color = isEven? 'black': 'white';
   return zebraCopy;
 });
